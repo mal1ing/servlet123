@@ -11,7 +11,7 @@
 <body>
 	
 	<%
-		Date now = new Date();
+/* 		Date now = new Date();
 		SimpleDateFormat timeFormatter = new SimpleDateFormat("현재시간 H시 m분 s초");
 		SimpleDateFormat dateFormatter = new SimpleDateFormat("오늘날짜 yyyy년 M월 d일");
 		
@@ -32,13 +32,13 @@
 			targetString = dateString;
 		} else {			// /jsp/test02.jsp?what=time
 			targetString = timeString;
-		}
+		} */
 		
 	
 	%>
 	
 	<div>
-		<div><%= targetString %></div>
+		<div><%= /* targetString */ %></div>
 	
 	</div>
 	

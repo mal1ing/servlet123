@@ -18,10 +18,15 @@
 		<h4> 좋아하는 과일을 선택하라</h4>
 		
 		<select name="fruit">
-			<option>바나나</option>
+			<option value="banana">바나나</option>
 			<option value="peach">복숭아</option>
 			<option value="strawberry">딸기</option>
 		</select>
+		
+		<h4>다음 중 선호하는 음식을 고르세요.</h4>
+		<label>민트초코 <input type="checkbox" name="food" value="mincho"></label>
+		<label>화아이안 피자<input type="checkbox" name="food" value="pizza"></label>
+		<label>번데기 <input type="checkbox" name="food" value="pupa"></label>
 		<button type="submit">입력</button>
 	</form>
 </body>
