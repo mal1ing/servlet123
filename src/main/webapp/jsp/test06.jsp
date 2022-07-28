@@ -31,10 +31,12 @@
 	%>
 	<h1>장 목록</h1>
 	<table border="1">
+		<thead>
 		<tr>
 			<td>번호</td>
 			<td>품목</td>
 		</tr>
+		</thead>
 	<%for(int i = 0; i <goodsList.size(); i++){%>
 		<tr>
 			<td><%= i + 1 %></td>
