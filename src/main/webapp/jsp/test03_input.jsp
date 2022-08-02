@@ -1,4 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,4 +14,4 @@
 		<button type="submit">계산</button>
 	</form>
 </body>
-</html> --%>
+</html>

@@ -1,21 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%@ page import="java.util.*" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
-<body>
-
-<%
+	<%
 // 아티스트 정보 
 
     Map<String, Object> artistInfo = new HashMap<>();
@@ -27,7 +14,6 @@
 
 // 아이유 노래 리스트 
     List<Map<String, Object>> musicList = new ArrayList<>();
-
     Map<String, Object> musicInfo = new HashMap<>();
     musicInfo.put("id", 1);
     musicInfo.put("title", "팔레트");
@@ -93,54 +79,4 @@
     musicInfo.put("composer", "아이유,이종훈,이채규");
     musicInfo.put("lyricist", "아이유");
     musicList.add(musicInfo);
-    
-    String idString = request.getParameter("id");
-    int id = 0;
-    if(idString != null){
-    	id = Integer.parseInt(idString);
-    }
-   	String musicTitle= request.getParameter("title");
 %>
-
-
-		<%	for(Map<String, Object> music : musicList){
-			int musicId = (Integer)music.get("id");
-			if(( idString != null || id == musicId ) ||
-					(musicTitle != null && musicTitle.equals(music.get("title")))){
-				int time = (Integer)music.get("time");
-		%>
-		
-			<div class="container">
-				<jsp:include page="test02_header.jsp" />
-				<jsp:include page="test02_menu.jsp" />
-			
-				<h1> 곡 정보</h1>
-				<div class="artist-box d-flex border border-success p-3">
-					<div>
-						<img width="200" src="<%=music.get("thumbnail") %>">
-					</div>
-					<div class="ml-3">
-						<h1><%= music.get("title") %></h1>
-						<div class="text-success"><%= music.get("singer") %></div><br>
-						<div>앨범 &nbsp;&nbsp;&nbsp;&nbsp;<%= music.get("album") %></div>
-						<div>재생시간 &nbsp;&nbsp;&nbsp;&nbsp;<%= time / 60 %> : <%= time % 60 %></div>
-						<div>작곡가 &nbsp;&nbsp;&nbsp;&nbsp;<%= music.get("composer") %></div>
-						<div>작사가 &nbsp;&nbsp;&nbsp;&nbsp;<%= music.get("lyricist") %></div>
-					</div>
-	
-				</div>
-				<div class="mt-3">
-					<h1>가사</h1>
-					<hr>
-					<div>가사 정보 없음</div>
-					<jsp:include page="test02_footer.jsp" />
-				</div>
-			
-			</div>
-		
-		<% } 
-		}
-		%>
-
-</body>
-</html>
